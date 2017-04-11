@@ -9,17 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // MARK: - Constants -
+    let factProvider = FactProvider()
+    
+    // MARK: - IBOutlets -
+    @IBOutlet weak var funFactLabel: UILabel!
+    
+    // MARK: - IBActions -
+    @IBAction func showFact() {
+        funFactLabel.text = factProvider.randomFact()
+    }
+    
+    // MARK: - View Controller Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        funFactLabel.text = factProvider.randomFact()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
